@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './MainMenu.css';
 
 export interface MainMenuProps {
@@ -22,7 +24,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
     return (
       <nav className={`MainMenu row ${this.props.position}`}>
         <div className="col item active">
-          <a href="#">
+          <Link to="/news">
             <div className="sub-item">
               <i className="fa fa-newspaper-o" />
             </div>
@@ -30,11 +32,11 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
             <div className="sub-item">
               Notícias
             </div>
-          </a>
+          </Link>
         </div>
 
         <div className="item col">
-          <a href="#">
+          <Link to="/professors">
             <div className="sub-item">
               <i className="fa fa-address-book" />
             </div>
@@ -42,11 +44,11 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
             <div className="sub-item">
               Professores
             </div>
-          </a>
+          </Link>
         </div>
 
         <div className="item col">
-          <a href="#">
+          <Link to="/contact">
             <div className="sub-item">
               <i className="fa fa-plus" />
             </div>
@@ -54,11 +56,11 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
             <div className="sub-item">
               Contato
             </div>
-          </a>
+          </Link>
         </div>
 
         <div className="item col">
-          <a href="#">
+          <Link to="/useful-links">
             <div className="sub-item">
               <i className="fa fa-link" />
             </div>
@@ -66,7 +68,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
             <div className="sub-item">
               Links Úteis
             </div>
-          </a>
+          </Link>
         </div>
       </nav>
     );
