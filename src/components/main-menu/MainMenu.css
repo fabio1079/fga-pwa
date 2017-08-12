@@ -1,0 +1,27 @@
+.MainMenu {
+  background-color: #00693E;
+}
+
+.MainMenu .item {
+  padding: 10px 0px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.MainMenu .item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.MainMenu .item:hover {
+  background-color: #50C878;
+}
+
+.MainMenu .item.active {
+  background-color: #50C878;
+}
+
+.MainMenu .item .sub-item {
+  width: 100%;
+}
