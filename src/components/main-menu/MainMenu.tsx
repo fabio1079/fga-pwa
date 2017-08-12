@@ -16,10 +16,6 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
     position: 'fixed-bottom'
   };
 
-  constructor(props: MainMenuProps) {
-    super(props);
-  }
-
   render() {
     return (
       <nav className={`MainMenu row ${this.props.position}`}>

@@ -1,10 +1,11 @@
 import * as React from 'react';
 
 import { shallow } from 'enzyme';
+import { Link } from 'react-router-dom';
 
 import MainMenu, { MainMenuProps } from './MainMenu';
 
-describe('App component', () => {
+describe('MainMenu component', () => {
   const wrapper = shallow(<MainMenu />);
 
 
@@ -17,19 +18,22 @@ describe('App component', () => {
 
   it('Has 4 links', () => {
     expect(
-      wrapper.contains(<div className="sub-item">Notícias</div>)
-    ).toBe(true);
-
-    expect(
-      wrapper.contains(<div className="sub-item">Professores</div>)
-    ).toBe(true);
-
-    expect(
-      wrapper.contains(<div className="sub-item">Contato</div>)
-    ).toBe(true);
-
-    expect(
-      wrapper.contains(<div className="sub-item">Links Úteis</div>)
-    ).toBe(true);
+      wrapper.find(Link)
+    ).toHaveLength(4)
   });
-})
+
+
+  it('Links to [/news, /professors, /contact, /useful-links]', () => {
+    let links = wrapper.find(Link);
+    let hrefs: string[] = [];
+
+    links.forEach(c => {
+      hrefs.push(c.prop('to').toString());
+    });
+
+    expect(hrefs).toContain('/news');
+    expect(hrefs).toContain('/professors');
+    expect(hrefs).toContain('/contact');
+    expect(hrefs).toContain('/useful-links');
+  });
+});
