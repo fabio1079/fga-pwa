@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import './MainMenu.css';
 
-interface MainMenuProps {
+export interface MainMenuProps {
   position?: 'fixed-top' | 'fixed-bottom';
 }
 
-interface MainMenuState {}
+interface MainMenuState { }
 
 class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
 
@@ -29,7 +29,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
 
             <div className="sub-item">
               Notícias
-          </div>
+            </div>
           </a>
         </div>
 
@@ -41,7 +41,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
 
             <div className="sub-item">
               Professores
-          </div>
+            </div>
           </a>
         </div>
 
@@ -53,7 +53,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
 
             <div className="sub-item">
               Contato
-          </div>
+            </div>
           </a>
         </div>
 
@@ -65,7 +65,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
 
             <div className="sub-item">
               Links Úteis
-          </div>
+            </div>
           </a>
         </div>
       </nav>
