@@ -3,6 +3,7 @@
 ***
 [![Build Status](https://travis-ci.org/fabio1079/fga-pwa.svg?branch=master)](https://travis-ci.org/fabio1079/fga-pwa)
 [![Coverage Status](https://coveralls.io/repos/github/fabio1079/fga-pwa/badge.svg?branch=master)](https://coveralls.io/github/fabio1079/fga-pwa?branch=master)
+[![Code Climate](https://codeclimate.com/github/fabio1079/fga-pwa/badges/gpa.svg)](https://codeclimate.com/github/fabio1079/fga-pwa)
 ***
 
 # About
