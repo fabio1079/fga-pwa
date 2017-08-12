@@ -4,6 +4,8 @@ language: node_js
 node_js:
   - 8
 
+dist: trusty
+
 cache:
   yarn: true
   directories:
@@ -14,4 +16,4 @@ before_script:
 
 script:
   - yarn test-with-coverage
-  #- yarn send-coverage
+  - yarn send-test-coverage
