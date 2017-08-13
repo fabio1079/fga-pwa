@@ -3,14 +3,14 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 
 import App from './App';
-import MainMenu from '../main-menu/MainMenu';
+import MainMenuContainer from '../main-menu/MainMenuContainer';
 
 describe('App component', () => {
   const wrapper = shallow(<App />);
 
   it('Has a main menu component', () => {
     expect(
-      wrapper.find(MainMenu)
+      wrapper.find(MainMenuContainer)
     ).toHaveLength(1)
   })
 })
