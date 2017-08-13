@@ -1,14 +1,16 @@
 import * as React from 'react';
-
 import { Link } from 'react-router-dom';
+
+import { CurrentPathState } from '../../redux-data/state';
 
 import './MainMenu.css';
 
 export interface MainMenuProps {
   position?: 'fixed-top' | 'fixed-bottom';
+  currentPath: CurrentPathState;
 }
 
-interface MainMenuState { }
+interface MainMenuState {}
 
 class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
 
@@ -16,10 +18,20 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
     position: 'fixed-bottom'
   };
 
+  getClassName(linkPath: string): string {
+    let className = 'col item ';
+
+    if (this.props.currentPath === linkPath) {
+      className += 'active';
+    }
+
+    return className;
+  }
+
   render() {
     return (
       <nav className={`MainMenu row ${this.props.position}`}>
-        <div className="col item active">
+        <div className={this.getClassName('/news')}>
           <Link to="/news">
             <div className="sub-item">
               <i className="fa fa-newspaper-o" />
@@ -31,7 +43,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
           </Link>
         </div>
 
-        <div className="item col">
+        <div className={this.getClassName('/professors')}>
           <Link to="/professors">
             <div className="sub-item">
               <i className="fa fa-address-book" />
@@ -43,7 +55,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
           </Link>
         </div>
 
-        <div className="item col">
+        <div className={this.getClassName('/contact')}>
           <Link to="/contact">
             <div className="sub-item">
               <i className="fa fa-plus" />
@@ -55,7 +67,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
           </Link>
         </div>
 
-        <div className="item col">
+        <div className={this.getClassName('/useful-links')}>
           <Link to="/useful-links">
             <div className="sub-item">
               <i className="fa fa-link" />

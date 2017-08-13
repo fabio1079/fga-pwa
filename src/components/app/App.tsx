@@ -2,11 +2,12 @@ import * as React from 'react';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import MainMenu from '../main-menu/MainMenu';
-import HomePage from '../home-page/HomePage';
-import ProfessorsPage from '../professors-page/ProfessorsPage';
-import ContactPage from '../contact-page/ContactPage';
-import UsefulLinksPage from '../useful-links-page/UsefulLinksPage';
+import MainMenuContainer from '../main-menu/MainMenuContainer';
+
+import HomePageContainer from '../home-page/HomePageContainer';
+import ProfessorsPageContainer from '../professors-page/ProfessorsPageContainer';
+import ContactPageContainer from '../contact-page/ContactPageContainer';
+import UsefulLinksPageContainer from '../useful-links-page/UsefulLinksPageContainer';
 
 import './App.css';
 
@@ -16,14 +17,14 @@ class App extends React.Component<{}, {}> {
       <div className="App">
         <BrowserRouter>
           <div>
-            <MainMenu />
+            <MainMenuContainer />
 
             <div className="container-fluid">
-              <Route exact={true} path="/" component={HomePage} />
-              <Route path="/news" component={HomePage} />
-              <Route path="/professors" component={ProfessorsPage} />
-              <Route path="/contact" component={ContactPage} />
-              <Route path="/useful-links" component={UsefulLinksPage} />
+              <Route exact={true} path="/" component={HomePageContainer} />
+              <Route path="/news" component={HomePageContainer} />
+              <Route path="/professors" component={ProfessorsPageContainer} />
+              <Route path="/contact" component={ContactPageContainer} />
+              <Route path="/useful-links" component={UsefulLinksPageContainer} />
             </div>
           </div>
         </BrowserRouter>

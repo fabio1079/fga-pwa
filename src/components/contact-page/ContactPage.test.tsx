@@ -5,7 +5,11 @@ import { shallow } from 'enzyme';
 import ContactPage from '../contact-page/ContactPage';
 
 describe('ContactPage component', () => {
-  const wrapper = shallow(<ContactPage />);
+  const props = {
+    setCurrentPage: (page: string) => {}
+  }
+
+  const wrapper = shallow(<ContactPage {...props} />);
 
   it('Renders without breaking', () => {
     expect(

@@ -5,7 +5,11 @@ import { shallow } from 'enzyme';
 import ProfessorsPage from '../professors-page/ProfessorsPage';
 
 describe('ProfessorsPage component', () => {
-  const wrapper = shallow(<ProfessorsPage />);
+  const props = {
+    setCurrentPage: (page: string) => {}
+  }
+
+  const wrapper = shallow(<ProfessorsPage {...props} />);
 
   it('Renders without breaking', () => {
     expect(

@@ -2,9 +2,9 @@
   "name": "fga-pwa",
   "version": "0.1.0",
   "private": false,
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/fabio1079/fga-pwa"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabio1079/fga-pwa"
   },
   "license": "MIT",
   "author": "Fabio Teixeira <fabio1079@gmail.com>",

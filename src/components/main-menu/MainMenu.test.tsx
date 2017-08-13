@@ -6,7 +6,10 @@ import { Link } from 'react-router-dom';
 import MainMenu, { MainMenuProps } from './MainMenu';
 
 describe('MainMenu component', () => {
-  const wrapper = shallow(<MainMenu />);
+  const props = {
+    currentPath: '/'
+  }
+  const wrapper = shallow(<MainMenu {...props} />);
 
 
   it('By default it has position fixed-bottom', () => {

@@ -5,7 +5,11 @@ import { shallow } from 'enzyme';
 import HomePage from '../home-page/HomePage';
 
 describe('HomePage component', () => {
-  const wrapper = shallow(<HomePage />);
+  const props = {
+    setCurrentPage(page: string) { }
+  }
+
+  const wrapper = shallow(<HomePage {...props} />);
 
   it('Renders without breaking', () => {
     expect(

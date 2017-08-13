@@ -5,7 +5,10 @@ import { shallow } from 'enzyme';
 import UsefulLinksPage from '../useful-links-page/UsefulLinksPage';
 
 describe('UsefulLinksPage component', () => {
-  const wrapper = shallow(<UsefulLinksPage />);
+  const props = {
+    setCurrentPage: (page: string) => {}
+  }
+  const wrapper = shallow(<UsefulLinksPage {...props} />);
 
   it('Renders without breaking', () => {
     expect(
