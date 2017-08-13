@@ -14,7 +14,9 @@ class ProfessorsPage extends React.Component<ProfessorsPageProps, {}> {
 
   render() {
     return (
-      <h1>Professors Page</h1>
+      <div className="ProfessorsPage">
+        <h1>Professors Page</h1>
+      </div>
     );
   }
 }

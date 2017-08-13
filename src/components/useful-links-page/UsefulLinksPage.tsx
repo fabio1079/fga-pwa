@@ -14,7 +14,9 @@ class UsefulLinksPage extends React.Component<UsefulLinksPageProps, {}> {
 
   render() {
     return (
-      <h1>Links Úteis</h1>
+      <div className="UsefulLinksPage">
+        <h1>Links Úteis</h1>
+      </div>
     );
   }
 }

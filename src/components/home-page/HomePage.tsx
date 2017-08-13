@@ -15,7 +15,9 @@ class HomePage extends React.Component<HomePageProps, {}> {
 
   render() {
     return (
-      <h1>Home Page</h1>
+      <div className="HomePage">
+        <h1>Home Page</h1>
+      </div>
     );
   }
 }
