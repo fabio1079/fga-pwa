@@ -18,10 +18,10 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
     position: 'fixed-bottom'
   };
 
-  getClassName(linkPath: string): string {
+  getClassName(...linkPath: string[]): string {
     let className = 'col item ';
 
-    if (this.props.currentPath === linkPath) {
+    if (linkPath.indexOf(this.props.currentPath) !== -1) {
       className += 'active';
     }
 
@@ -32,7 +32,7 @@ class MainMenu extends React.Component<MainMenuProps, MainMenuState> {
     return (
       <div className="MainMenu">
         <nav className={`row ${this.props.position}`}>
-          <div className={this.getClassName('/news')}>
+          <div className={this.getClassName('/', '/news')}>
             <Link to="/news">
               <div className="sub-item">
                 <i className="fa fa-newspaper-o" />

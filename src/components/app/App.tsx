@@ -1,9 +1,10 @@
 import * as React from 'react';
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import MainMenuContainer from '../main-menu/MainMenuContainer';
 
+import NotFoundPageContainer from '../not-found-page/NotFoundPageContainer';
 import HomePageContainer from '../home-page/HomePageContainer';
 import ProfessorsPageContainer from '../professors-page/ProfessorsPageContainer';
 import ContactPageContainer from '../contact-page/ContactPageContainer';
@@ -20,11 +21,14 @@ class App extends React.Component<{}, {}> {
             <MainMenuContainer />
 
             <div className="container-fluid">
-              <Route exact={true} path="/" component={HomePageContainer} />
-              <Route path="/news" component={HomePageContainer} />
-              <Route path="/professors" component={ProfessorsPageContainer} />
-              <Route path="/contact" component={ContactPageContainer} />
-              <Route path="/useful-links" component={UsefulLinksPageContainer} />
+              <Switch>
+                <Route exact={true} path="/" component={HomePageContainer} />
+                <Route path="/news" component={HomePageContainer} />
+                <Route path="/professors" component={ProfessorsPageContainer} />
+                <Route path="/contact" component={ContactPageContainer} />
+                <Route path="/useful-links" component={UsefulLinksPageContainer} />
+                <Route component={NotFoundPageContainer} />
+              </Switch>
             </div>
           </div>
         </BrowserRouter>
