@@ -19,8 +19,6 @@ class HomePage extends React.Component<HomePageProps, {}> {
       this.props.setCurrentPage(this.props.location.pathname);
     }
 
-    console.log(this.props.articles.status);
-
     if (this.props.articles.status === 'NOT_ASKED') {
       this.props.fetchArticles(1);
     }
@@ -34,18 +32,19 @@ class HomePage extends React.Component<HomePageProps, {}> {
     return (
       <div className="HomePage">
         {webDataStatusSwitchDisplay
-            (this.props.articles.status)
-            (<h2>Carregando notícias</h2>)
-            (<h2>Carregando notícias</h2>)
-            (
-              <div className="web-data-error-message">
-                <h2>Ops, algum ocorreu enquanto carregava as notícias. Tente novamente</h2>
-                <span>
-                  {this.props.articles.error}
-                </span>
+          (this.props.articles.status)
+          (<h2>Carregando notícias</h2>)
+          (<h2>Carregando notícias</h2>)
+          (
+            <div className="web-data-error-message">
+              <h2>Ops, algum ocorreu enquanto carregava as notícias. Tente novamente</h2>
+              <span>
+                {this.props.articles.error}
+              </span>
             </div>
-            )
-            (<Articles articles={this.props.articles.data} />)}
+          )
+          (<Articles articles={this.props.articles.data} />)
+        }
       </div>
     );
   }

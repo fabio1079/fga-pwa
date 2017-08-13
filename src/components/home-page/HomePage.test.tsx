@@ -6,17 +6,40 @@ import HomePage from '../home-page/HomePage';
 
 describe('HomePage component', () => {
   const props = {
-    articles: initialState.articles,
     setCurrentPage(page: string) { },
     fetchArticles(page: number) { },
     clearArticles() { }
   }
 
-  const wrapper = shallow(<HomePage {...props} />);
+  it('Display a diferent content based on the articles status', () => {
+    let articles = initialState.articles;
 
-  it('Renders without breaking', () => {
+    articles.status = 'NOT_ASKED';
+    let homePage = shallow(<HomePage {...props} articles={articles} />);
+
     expect(
-      wrapper.contains(<h1>Home Page</h1>)
-    ).toBe(true);
-  })
+      homePage.find('h2').text()
+    ).toEqual('Carregando notícias');
+
+    articles.status = 'LOADING';
+    homePage = shallow(<HomePage {...props} articles={articles} />);
+
+    expect(
+      homePage.find('h2').text()
+    ).toEqual('Carregando notícias');
+
+    articles.status = 'ERROR';
+    homePage = shallow(<HomePage {...props} articles={articles} />);
+
+    expect(
+      homePage.find('h2').text()
+    ).toEqual('Ops, algum ocorreu enquanto carregava as notícias. Tente novamente');
+
+    articles.status = 'SUCCESS';
+    homePage = shallow(<HomePage {...props} articles={articles} />);
+
+    expect(
+      homePage.find('Articles')
+    ).toHaveLength(1);
+  });
 });
