@@ -39,4 +39,26 @@ describe('MainMenu component', () => {
     expect(hrefs).toContain('/contact');
     expect(hrefs).toContain('/useful-links');
   });
+
+  it('applys the active className on the tab of the given currentPath', () => {
+    let mainMenu = shallow(<MainMenu currentPath="/news" />);
+
+    expect(
+      mainMenu.find('Link[to="/professors"]').parent().prop('className')
+    ).not.toContain('active');
+
+    expect(
+      mainMenu.find('Link[to="/news"]').parent().prop('className')
+    ).toContain('active');
+
+    mainMenu = shallow(<MainMenu currentPath="/professors" />);
+
+    expect(
+      mainMenu.find('Link[to="/professors"]').parent().prop('className')
+    ).toContain('active');
+
+    expect(
+      mainMenu.find('Link[to="/news"]').parent().prop('className')
+    ).not.toContain('active');
+  });
 });
