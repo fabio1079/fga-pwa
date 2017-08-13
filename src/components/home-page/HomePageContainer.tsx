@@ -2,17 +2,34 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 import HomePage from './HomePage';
-import { State } from '../../redux-data/state';
+import initialState, { State } from '../../redux-data/state';
 import { setCurrentPath } from '../../redux-data/actions/currentPathActions';
+import { asyncSetArticles, setArticles } from '../../redux-data/actions/articlesActions';
 
 const mapStateToProps = (state: State) => {
-  return {};
+  return {
+    articles: state.articles
+  };
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<State>) => {
   return {
     setCurrentPage(page: string) {
       dispatch(setCurrentPath(page));
+    },
+
+    fetchArticles(page: number) {
+      dispatch(asyncSetArticles());
+    },
+
+    clearArticles() {
+      dispatch(
+        setArticles(
+          initialState.articles.status,
+          initialState.articles.data,
+          initialState.articles.error
+        )
+      );
     }
   };
 };

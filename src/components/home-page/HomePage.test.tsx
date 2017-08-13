@@ -1,12 +1,15 @@
 import * as React from 'react';
-
 import { shallow } from 'enzyme';
 
+import initialState from '../../redux-data/state';
 import HomePage from '../home-page/HomePage';
 
 describe('HomePage component', () => {
   const props = {
-    setCurrentPage(page: string) { }
+    articles: initialState.articles,
+    setCurrentPage(page: string) { },
+    fetchArticles(page: number) { },
+    clearArticles() { }
   }
 
   const wrapper = shallow(<HomePage {...props} />);
