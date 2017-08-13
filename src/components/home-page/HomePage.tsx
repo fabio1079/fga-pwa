@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { RouteProps } from 'react-router-dom';
+import { Location } from 'history';
+
 import { WebData, ArticlesType } from '../../redux-data/state';
 
 import { webDataStatusSwitchDisplay } from '../../utils/WebDataUtils';
@@ -10,6 +12,7 @@ interface HomePageProps extends RouteProps {
   setCurrentPage(page: string): void;
   fetchArticles(page: number): void;
   clearArticles(): void;
+  location?: Location;
 }
 
 class HomePage extends React.Component<HomePageProps, {}> {
