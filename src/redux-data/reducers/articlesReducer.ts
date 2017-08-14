@@ -20,12 +20,6 @@ function articlesReducer(
         data: [...oldData, ...newArticles.data]
       };
 
-    case 'UPDATE_STATUS_ARTICLES':
-      return {
-        ...articles,
-        status: action.payload.status
-      };
-
     default:
       return articles;
   }

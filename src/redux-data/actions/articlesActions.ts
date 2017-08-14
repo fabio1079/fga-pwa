@@ -34,24 +34,34 @@ export function concatArticles (
   };
 }
 
-// TODO: This function is kinda unecessary, so remove it later.
-export function setUpdateStatusArticles (
-  status: WebDataStatus
-): ArticlesAction {
+type UpdateArticleStatus = {
+  status: WebDataStatus,
+  error?: string,
+  articles?: ArticlesType[]
+};
 
-  return {
-    type: 'SET_ARTICLES',
-    payload: {
-      status,
-      data: [],
-      error: ''
-    }
-  };
+export function updateArticleStatus(update: UpdateArticleStatus): ArticlesAction {
+  switch (update.status) {
+    case 'NOT_ASKED':
+    case 'LOADING':
+      return concatArticles(update.status, []);
+
+    case 'ERROR':
+      let err = update.error ? update.error : '';
+      return setArticles('ERROR', [], err);
+
+    case 'SUCCESS':
+      let data = update.articles ? update.articles : [];
+      return concatArticles('SUCCESS', data);
+
+    default:
+      throw new Error(`Invalid WebDataStatus: ${update.status}`);
+  }
 }
 
 export function asyncSetArticles() {
   return (dispatch: Dispatch<State>) => {
-    dispatch(setUpdateStatusArticles('LOADING'));
+    dispatch(updateArticleStatus({status: 'LOADING'}));
 
     fetch('https://fga.unb.br/api/v1/articles?parent_id=46')
       .then(response => response.json())
@@ -71,7 +81,7 @@ export function asyncSetArticles() {
       })
       .catch(err => {
         dispatch(
-          setArticles('ERROR', [], String(err))
+          updateArticleStatus({status: 'ERROR', error: String(err)})
         );
       });
   };
