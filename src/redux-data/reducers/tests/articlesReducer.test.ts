@@ -23,6 +23,7 @@ describe('articlesReducer reducer', () => {
       id: 1,
       title: 'mock title 1',
       created_at: '00:00:00 00/00/0000',
+      body: 'mock body'
     };
     let action = concatArticles('SUCCESS', [mockArticle], '');
 

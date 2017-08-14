@@ -12,12 +12,14 @@ describe('articlesActions actions', () => {
       id: 1,
       title: 'mock title 1',
       created_at: '00:00:00 00/00/0000',
+      body: 'mock body'
     },
 
     {
       id: 2,
       title: 'mock title 2',
       created_at: '00:00:00 00/00/0000',
+      body: 'mock body'
     }
   ];
 

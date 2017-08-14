@@ -1,0 +1,13 @@
+.ArticleListItem {
+  margin: 10px 0px;
+}
+
+.ArticleListItem .card-container {
+  /*width: 100vh;*/
+  height: 25vh;
+  overflow: hidden;
+}
+
+.ArticleListItem img {
+  transform: translateX(-70px);
+}

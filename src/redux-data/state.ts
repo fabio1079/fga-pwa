@@ -20,7 +20,7 @@ export type ArticlesImageType = {
 
 export type ArticlesType = {
   id: number,
-  body?: string | object,
+  body: string,
   abstract?: string
   title: string,
   created_at: string,
