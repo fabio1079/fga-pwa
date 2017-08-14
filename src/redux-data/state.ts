@@ -1,9 +1,5 @@
 export type CurrentPathState = string;
 
-export type TemporaryTestState = {
-  someTestValue: number
-};
-
 export type WebDataStatus = 'NOT_ASKED' | 'LOADING' | 'ERROR' | 'SUCCESS';
 
 export type WebData<DataType> = {
@@ -33,16 +29,11 @@ export type ArticlesType = {
 
 export type State = {
   currentPath: CurrentPathState,
-  temporaryTestState: TemporaryTestState,
   articles: WebData<ArticlesType>
 };
 
 const initialState: State = {
   currentPath: '/',
-
-  temporaryTestState: {
-    someTestValue: 123
-  },
 
   articles: {
     status: 'NOT_ASKED',

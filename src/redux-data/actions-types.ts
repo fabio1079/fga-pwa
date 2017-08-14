@@ -5,11 +5,6 @@ export type CurrentPathAction = {
   payload: string
 };
 
-export type TempTestSomeValueAction = {
-  type: 'SET_TEMP_TEST_SOME_VALUE',
-  payload: number;
-};
-
 export type ArticlesAction = {
   type: 'SET_ARTICLES' | 'CONCAT_ARTICLES' | 'UPDATE_STATUS_ARTICLES',
   payload: WebData<ArticlesType>
@@ -17,5 +12,4 @@ export type ArticlesAction = {
 
 export type Action
   = CurrentPathAction
-  | TempTestSomeValueAction
   | ArticlesAction;

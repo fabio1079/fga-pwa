@@ -52,7 +52,7 @@ export function asyncSetArticles() {
   return (dispatch: Dispatch<State>) => {
     dispatch(setUpdateStatusArticles('LOADING'));
 
-    fetch('https://fga.unb.br/api/v1/articles')
+    fetch('https://fga.unb.br/api/v1/articles?parent_id=46')
       .then(response => response.json())
       .then((json: {articles: ArticlesType[]})  => {
         let data: ArticlesType[] = json.articles.map(article => ({

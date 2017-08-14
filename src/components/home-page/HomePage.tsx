@@ -9,10 +9,10 @@ import Articles from '../articles/Articles';
 
 interface HomePageProps extends RouteProps {
   articles: WebData<ArticlesType>;
+  location?: Location;
   setCurrentPage(page: string): void;
   fetchArticles(page: number): void;
   clearArticles(): void;
-  location?: Location;
 }
 
 class HomePage extends React.Component<HomePageProps, {}> {
