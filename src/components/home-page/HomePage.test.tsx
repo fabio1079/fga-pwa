@@ -22,15 +22,15 @@ describe('HomePage component', () => {
     let homePage = shallow(<HomePage {...props} articles={articles} />);
 
     expect(
-      homePage.find('h2').text()
-    ).toEqual('Carregando notícias');
+      homePage.find('Spinner').length
+    ).not.toBe(0);
 
     articles.status = 'LOADING';
     homePage = shallow(<HomePage {...props} articles={articles} />);
 
     expect(
-      homePage.find('h2').text()
-    ).toEqual('Carregando notícias');
+      homePage.find('Spinner').length
+    ).not.toBe(0);
 
     articles.status = 'ERROR';
     homePage = shallow(<HomePage {...props} articles={articles} />);

@@ -6,6 +6,7 @@ import { WebData, ArticlesType } from '../../redux-data/state';
 
 import { webDataStatusSwitchDisplay } from '../../utils/WebDataUtils';
 import Articles from '../articles/Articles';
+import Spinner from '../spinner/Spinner';
 
 interface HomePageProps extends RouteProps {
   articles: WebData<ArticlesType>;
@@ -36,8 +37,8 @@ class HomePage extends React.Component<HomePageProps, {}> {
       <div className="HomePage">
         {webDataStatusSwitchDisplay
           (this.props.articles.status)
-          (<h2>Carregando notícias</h2>)
-          (<h2>Carregando notícias</h2>)
+          (<Spinner />)
+          (<Spinner />)
           (
             <div className="web-data-error-message">
               <h2>Ops, algum ocorreu enquanto carregava as notícias. Tente novamente</h2>
