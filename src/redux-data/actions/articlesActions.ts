@@ -34,6 +34,7 @@ export function concatArticles (
   };
 }
 
+// TODO: This function is kinda unecessary, so remove it later.
 export function setUpdateStatusArticles (
   status: WebDataStatus
 ): ArticlesAction {
