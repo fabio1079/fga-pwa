@@ -76,12 +76,15 @@ describe('HomePage component', () => {
   });
 
   it('calls for fetchArticles on mount if articles status is NOT_ASKED', () => {
+    let articles = {...initialState.articles};
+    articles.status = 'NOT_ASKED';
+
     let spy = sinonSpy(props, 'fetchArticles');
 
     mount(
       <HomePage
         {...props}
-        articles={initialState.articles}
+        articles={articles}
       />
     );
 
