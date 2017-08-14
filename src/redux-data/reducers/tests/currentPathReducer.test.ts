@@ -5,7 +5,7 @@ import { setCurrentPath } from '../../actions/currentPathActions';
 
 describe('currentPathReducer reducer', () => {
   it('Set the current path on the given state', () => {
-    let state = initialState;
+    let state = {...initialState} // lets do not mutate initialState;
     let action = setCurrentPath('/news');
 
     expect(state.currentPath).toEqual('/');
