@@ -43,7 +43,7 @@ describe('HomePage component', () => {
     homePage = shallow(<HomePage {...props} articles={articles} />);
 
     expect(
-      homePage.find('Articles')
+      homePage.find('ArticleList')
     ).toHaveLength(1);
   });
 

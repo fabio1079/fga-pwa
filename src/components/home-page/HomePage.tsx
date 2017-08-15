@@ -5,7 +5,7 @@ import { Location } from 'history';
 import { WebData, ArticlesType } from '../../redux-data/state';
 
 import { webDataStatusSwitchDisplay } from '../../utils/WebDataUtils';
-import Articles from '../articles/Articles';
+import ArticleList from '../article-list/ArticleList';
 import Spinner from '../spinner/Spinner';
 
 interface HomePageProps extends RouteProps {
@@ -47,7 +47,7 @@ class HomePage extends React.Component<HomePageProps, {}> {
               </span>
             </div>
           )
-          (<Articles articles={this.props.articles.data} />)
+          (<ArticleList articles={this.props.articles.data} />)
         }
       </div>
     );

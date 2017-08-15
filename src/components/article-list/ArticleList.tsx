@@ -3,11 +3,11 @@ import { ArticlesType } from '../../redux-data/state';
 
 import ArticleListItem from '../article-list-item/ArticleListItem';
 
-interface ArticlesProps {
+interface ArticleListProps {
   articles: ArticlesType[];
 }
 
-class Articles extends React.Component<ArticlesProps, {}> {
+class ArticleList extends React.Component<ArticleListProps, {}> {
   render() {
     return (
       <div className="Articles">
@@ -19,4 +19,4 @@ class Articles extends React.Component<ArticlesProps, {}> {
   }
 }
 
-export default Articles;
+export default ArticleList;
