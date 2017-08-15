@@ -1,13 +1,33 @@
 .ArticleListItem {
-  margin: 10px 0px;
+  margin: 15px 0px;
 }
 
 .ArticleListItem .card-container {
-  /*width: 100vh;*/
-  height: 25vh;
   overflow: hidden;
 }
 
 .ArticleListItem img {
-  transform: translateX(-70px);
+  width: 100%;
+  height: 100%;
+}
+
+.ArticleListItem .card-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #005263;
+}
+
+.ArticleListItem .card-text {
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 100px;
+}
+
+.ArticleListItem .card-text img {
+  display: none;
+}
+
+.ArticleListItem .create-at {
+  color: #D2B48C;
 }
