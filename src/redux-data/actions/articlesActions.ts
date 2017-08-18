@@ -1,10 +1,10 @@
 import { Dispatch } from 'react-redux';
-import { State, WebDataStatus, ArticlesType } from '../state';
+import { State, WebDataStatus, ArticleType } from '../state';
 import { ArticlesAction } from '../actions-types';
 
 export function setArticles (
     status: WebDataStatus,
-    data: ArticlesType[],
+    data: ArticleType[],
     error: string = ''
   ): ArticlesAction {
 
@@ -20,7 +20,7 @@ export function setArticles (
 
 export function concatArticles (
   status: WebDataStatus,
-  data: ArticlesType[],
+  data: ArticleType[],
   error: string = ''
 ): ArticlesAction {
 
@@ -37,7 +37,7 @@ export function concatArticles (
 type UpdateArticleStatus = {
   status: WebDataStatus,
   error?: string,
-  articles?: ArticlesType[]
+  articles?: ArticleType[]
 };
 
 export function updateArticleStatus(update: UpdateArticleStatus): ArticlesAction {
@@ -65,8 +65,8 @@ export function asyncSetArticles() {
 
     fetch('https://fga.unb.br/api/v1/articles?parent_id=46&limit=20&page=1')
       .then(response => response.json())
-      .then((json: {articles: ArticlesType[]})  => {
-        let data: ArticlesType[] = json.articles.map(article => ({
+      .then((json: {articles: ArticleType[]})  => {
+        let data: ArticleType[] = json.articles.map(article => ({
           id: article.id,
           body: article.body,
           abstract: article.abstract,

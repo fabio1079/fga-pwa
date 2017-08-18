@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { ArticlesType } from '../../redux-data/state';
+import { Link } from 'react-router-dom';
+
+import { ArticleType } from '../../redux-data/state';
 
 import './ArticleListItem.css';
 
 interface ArticleListItemProps {
-  article: ArticlesType;
+  article: ArticleType;
 }
 
 interface ArticleListItemState {
@@ -63,7 +65,9 @@ class ArticleListItem extends React.Component<ArticleListItemProps, ArticleListI
 
           <div className="card-block">
             <h4 className="card-title">
-              {this.props.article.title}
+              <Link to={`/article/${this.props.article.id}`}>
+                {this.props.article.title}
+              </Link>
             </h4>
 
             <p

@@ -1,13 +1,13 @@
 import { Dispatch } from 'redux';
 import { State } from '../../state';
 
-import { ArticlesType } from '../../state';
+import { ArticleType } from '../../state';
 import { setArticles, concatArticles, updateArticleStatus, asyncSetArticles } from '../articlesActions';
 import{ ArticlesAction } from '../../actions-types';
 
 
 describe('articlesActions actions', () => {
-  const mockArticles: ArticlesType[] = [
+  const mockArticles: ArticleType[] = [
     {
       id: 1,
       title: 'mock title 1',
@@ -94,7 +94,7 @@ describe('articlesActions actions', () => {
       Promise.resolve({
         ok: true,
         Id: '123',
-        json: (): {articles: ArticlesType[]} => ({articles: mockArticles})
+        json: (): {articles: ArticleType[]} => ({articles: mockArticles})
       }));
 
       asyncSetArticles() (mockDispatch);

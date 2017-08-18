@@ -2,14 +2,14 @@ import * as React from 'react';
 import { RouteProps } from 'react-router-dom';
 import { Location } from 'history';
 
-import { WebData, ArticlesType } from '../../redux-data/state';
+import { WebData, ArticleType } from '../../redux-data/state';
 
 import { webDataStatusSwitchDisplay } from '../../utils/WebDataUtils';
 import ArticleList from '../article-list/ArticleList';
 import Spinner from '../spinner/Spinner';
 
 interface HomePageProps extends RouteProps {
-  articles: WebData<ArticlesType[]>;
+  articles: WebData<ArticleType[]>;
   location?: Location;
   setCurrentPage(page: string): void;
   fetchArticles(page: number): void;

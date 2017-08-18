@@ -1,4 +1,4 @@
-import { WebData, ArticlesType } from './state';
+import { WebData, ArticleType } from './state';
 
 export type CurrentPathAction = {
   type: 'SET_CURRENT_PATH',
@@ -7,7 +7,7 @@ export type CurrentPathAction = {
 
 export type ArticlesAction = {
   type: 'SET_ARTICLES' | 'CONCAT_ARTICLES' | 'UPDATE_STATUS_ARTICLES',
-  payload: WebData<ArticlesType[]>
+  payload: WebData<ArticleType[]>
 };
 
 export type Action

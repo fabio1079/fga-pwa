@@ -18,7 +18,7 @@ export type ArticlesImageType = {
   thumb_url: string
 };
 
-export type ArticlesType = {
+export type ArticleType = {
   id: number,
   body: string,
   abstract?: string
@@ -29,7 +29,7 @@ export type ArticlesType = {
 
 export type State = {
   currentPath: CurrentPathState,
-  articles: WebData<ArticlesType[]>
+  articles: WebData<ArticleType[]>
 };
 
 const initialState: State = {

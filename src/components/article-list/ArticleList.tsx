@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { ArticlesType } from '../../redux-data/state';
+import { ArticleType } from '../../redux-data/state';
 
 import ArticleListItem from '../article-list-item/ArticleListItem';
 
 interface ArticleListProps {
-  articles: ArticlesType[];
+  articles: ArticleType[];
 }
 
 class ArticleList extends React.Component<ArticleListProps, {}> {
