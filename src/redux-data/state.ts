@@ -29,7 +29,8 @@ export type ArticleType = {
 
 export type State = {
   currentPath: CurrentPathState,
-  articles: WebData<ArticleType[]>
+  articles: WebData<ArticleType[]>,
+  selectedArticle: WebData<ArticleType | null>
 };
 
 const initialState: State = {
@@ -38,6 +39,12 @@ const initialState: State = {
   articles: {
     status: 'NOT_ASKED',
     data: [],
+    error: ''
+  },
+
+  selectedArticle: {
+    status: 'NOT_ASKED',
+    data: null,
     error: ''
   }
 };

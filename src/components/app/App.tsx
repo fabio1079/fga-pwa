@@ -9,6 +9,7 @@ import HomePageContainer from '../home-page/HomePageContainer';
 import ProfessorsPageContainer from '../professors-page/ProfessorsPageContainer';
 import ContactPageContainer from '../contact-page/ContactPageContainer';
 import UsefulLinksPageContainer from '../useful-links-page/UsefulLinksPageContainer';
+import  ArticlePageContainer from '../article-page/ArticlePageContainer';
 
 import './App.css';
 
@@ -24,6 +25,7 @@ class App extends React.Component<{}, {}> {
               <Switch>
                 <Route exact={true} path="/" component={HomePageContainer} />
                 <Route path="/news" component={HomePageContainer} />
+                <Route path="/article/:id" component={ArticlePageContainer} />
                 <Route path="/professors" component={ProfessorsPageContainer} />
                 <Route path="/contact" component={ContactPageContainer} />
                 <Route path="/useful-links" component={UsefulLinksPageContainer} />

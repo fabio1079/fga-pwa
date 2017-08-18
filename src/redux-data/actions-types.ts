@@ -10,6 +10,12 @@ export type ArticlesAction = {
   payload: WebData<ArticleType[]>
 };
 
+export type SelectedArticlesAction = {
+  type: 'SET_SELECTED_ARTICLE',
+  payload: WebData<ArticleType | null>
+}
+
 export type Action
   = CurrentPathAction
-  | ArticlesAction;
+  | ArticlesAction
+  | SelectedArticlesAction;
