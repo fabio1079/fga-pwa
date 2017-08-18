@@ -7,7 +7,7 @@ export type CurrentPathAction = {
 
 export type ArticlesAction = {
   type: 'SET_ARTICLES' | 'CONCAT_ARTICLES' | 'UPDATE_STATUS_ARTICLES',
-  payload: WebData<ArticlesType>
+  payload: WebData<ArticlesType[]>
 };
 
 export type Action

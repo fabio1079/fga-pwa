@@ -4,7 +4,7 @@ export type WebDataStatus = 'NOT_ASKED' | 'LOADING' | 'ERROR' | 'SUCCESS';
 
 export type WebData<DataType> = {
   status: WebDataStatus,
-  data: DataType[],
+  data: DataType,
   error: string
 };
 
@@ -29,7 +29,7 @@ export type ArticlesType = {
 
 export type State = {
   currentPath: CurrentPathState,
-  articles: WebData<ArticlesType>
+  articles: WebData<ArticlesType[]>
 };
 
 const initialState: State = {

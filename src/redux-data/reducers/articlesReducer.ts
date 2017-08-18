@@ -2,16 +2,16 @@ import initialState, { WebData, ArticlesType } from '../state';
 import { ArticlesAction } from '../actions-types';
 
 function articlesReducer(
-    articles: WebData<ArticlesType> = initialState.articles,
+    articles: WebData<ArticlesType[]> = initialState.articles,
     action: ArticlesAction
-  ): WebData<ArticlesType> {
+  ): WebData<ArticlesType[]> {
 
   switch (action.type) {
     case 'SET_ARTICLES':
       return action.payload;
 
     case 'CONCAT_ARTICLES':
-      let newArticles: WebData<ArticlesType> = action.payload;
+      let newArticles: WebData<ArticlesType[]> = action.payload;
       let oldData: ArticlesType[] = articles.data;
 
       return {

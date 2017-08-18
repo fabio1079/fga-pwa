@@ -9,7 +9,7 @@ import ArticleList from '../article-list/ArticleList';
 import Spinner from '../spinner/Spinner';
 
 interface HomePageProps extends RouteProps {
-  articles: WebData<ArticlesType>;
+  articles: WebData<ArticlesType[]>;
   location?: Location;
   setCurrentPage(page: string): void;
   fetchArticles(page: number): void;
