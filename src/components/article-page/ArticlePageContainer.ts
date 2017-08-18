@@ -4,7 +4,7 @@ import { Dispatch } from 'redux';
 import ArticlePage from './ArticlePage';
 import { State } from '../../redux-data/state';
 
-import { asyncSetSelectedArticle } from '../../redux-data/actions/selectedArticleActions';
+import { asyncSetSelectedArticle, setSelectedArticle } from '../../redux-data/actions/selectedArticleActions';
 
 const mapStateToProps = (state: State) => {
   return {
@@ -16,6 +16,10 @@ const mapDispatchToProps = (dispatch: Dispatch<State>) => {
   return {
     fetchArticle(id: string) {
       dispatch(asyncSetSelectedArticle(id));
+    },
+
+    clearSelectedArticle() {
+      dispatch(setSelectedArticle('NOT_ASKED', '', null));
     }
   };
 };

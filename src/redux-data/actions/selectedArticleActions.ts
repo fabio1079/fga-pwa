@@ -28,7 +28,7 @@ export function asyncSetSelectedArticle(id: string) {
           id: json.article.id,
           body: json.article.body,
           abstract: json.article.abstract,
-          title: json.article.created_at,
+          title: json.article.title,
           created_at: json.article.created_at,
           image: json.article.image
         };
