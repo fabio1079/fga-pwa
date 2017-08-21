@@ -63,10 +63,10 @@ class ArticlePage extends React.Component<ArticlePageProps, {}> {
         {
           this.props.article.data ?
             webDataStatusSwitchDisplay(this.props.article.status)
-              (<Spinner />)
-              (<Spinner />)
-              (this.errorMessage(this.props.article.error))
-              (this.successMessage(this.props.article.data))
+              (() => <Spinner />)
+              (() => <Spinner />)
+              (() => this.errorMessage(this.props.article.error))
+              (() => this.successMessage(this.props.article.data))
           :
             <Spinner />
         }

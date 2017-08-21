@@ -37,17 +37,17 @@ class HomePage extends React.Component<HomePageProps, {}> {
       <div className="HomePage">
         {webDataStatusSwitchDisplay
           (this.props.articles.status)
-          (<Spinner />)
-          (<Spinner />)
-          (
+          (() => <Spinner />)
+          (() => <Spinner />)
+          (() => (
             <div className="web-data-error-message">
               <h2>Ops, algum ocorreu enquanto carregava as notícias. Tente novamente</h2>
               <span>
                 {this.props.articles.error}
               </span>
             </div>
-          )
-          (<ArticleList articles={this.props.articles.data} />)
+          ))
+          (() => <ArticleList articles={this.props.articles.data} />)
         }
       </div>
     );

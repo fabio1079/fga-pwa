@@ -9,10 +9,10 @@ describe('WebDataUtils util functions', () => {
   it('webDataStatusSwitchDisplay switch JSX.Elements between webdata status', () => {
     const webDataSwitchFactory = (status: WebDataStatus) => {
       return webDataStatusSwitchDisplay (status)
-        (<span>not asked</span>)
-        (<span>loading</span>)
-        (<span>error</span>)
-        (<span>success</span>);
+        (() => <span>not asked</span>)
+        (() => <span>loading</span>)
+        (() => <span>error</span>)
+        (() => <span>success</span>);
     }
 
     let shallowElement = shallow(webDataSwitchFactory('NOT_ASKED'));

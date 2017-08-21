@@ -3,22 +3,22 @@ import { WebDataStatus } from '../redux-data/state';
 
 export const webDataStatusSwitchDisplay =
   (webDataStatus: WebDataStatus) =>
-  (notAsked: JSX.Element) =>
-  (loading: JSX.Element) =>
-  (error: JSX.Element) =>
-  (success: JSX.Element) => {
+  (notAsked: () => JSX.Element) =>
+  (loading: () => JSX.Element) =>
+  (error: () => JSX.Element) =>
+  (success: () => JSX.Element) => {
     switch (webDataStatus) {
       case 'NOT_ASKED':
-        return notAsked;
+        return notAsked();
 
       case 'LOADING':
-        return loading;
+        return loading();
 
       case 'ERROR':
-        return error;
+        return error();
 
       case 'SUCCESS':
-        return success;
+        return success();
 
       default:
         return (
